@@ -11,7 +11,7 @@ return {
       -- See `:help nvim-treesitter`
       -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
       vim.defer_fn(function()
-        local config = require('nvim-treesitter.configs')
+        local config = require 'nvim-treesitter.configs'
 
         config.setup {
           -- Add languages to be installed here that you want installed for treesitter
@@ -19,6 +19,12 @@ return {
 
           -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
           auto_install = false,
+
+          sync_install = false,
+
+          ignore_install = {},
+
+          modules = {},
 
           highlight = { enable = true },
           indent = { enable = true },
@@ -77,7 +83,6 @@ return {
           },
         }
       end, 0)
-    end
-
+    end,
   },
 }
