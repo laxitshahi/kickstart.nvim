@@ -10,12 +10,16 @@ return {
         -- Lua
         null_ls.builtins.formatting.stylua,
         -- Python
-        null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.black,
         null_ls.builtins.diagnostics.pylint,
         -- JavaScript
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.diagnostics.eslint_d,
+        --go
+        null_ls.builtins.formatting.gofmt,
+        null_ls.builtins.formatting.goimports,
+        null_ls.builtins.formatting.golines,
       },
     }
 

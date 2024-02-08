@@ -4,7 +4,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -59,3 +58,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- vim.diagnostic.config { virtual_text = false }
