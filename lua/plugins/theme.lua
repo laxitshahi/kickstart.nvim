@@ -1,11 +1,14 @@
 return {
   {
     -- Theme
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    -- 'catppuccin/nvim',
+    -- 'rebelot/kanagawa.nvim',
+    'ellisonleao/gruvbox.nvim',
     priority = 1000,
     -- You need this config to "call" and setup the theme
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
 
@@ -16,7 +19,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'onedark',
+        -- theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },

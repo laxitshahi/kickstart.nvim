@@ -2,10 +2,10 @@ local map = vim.keymap.set
 
 -- [[ vim Remaps ]]
 -- -- Move to window using the <ctrl> hjkl keys
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map('n', '<C-l>', '<C-w>l', { desc = 'Go to right window', remap = true })
+map('n', '<C-h>', '<C-w>h', { desc = 'Go to left window', remap = true })
+map('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window', remap = true })
+map('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window', remap = true })
 
 -- [[ Basic Keymaps ]]
 -- Keymaps for better default experience
@@ -21,4 +21,3 @@ map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic mes
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-

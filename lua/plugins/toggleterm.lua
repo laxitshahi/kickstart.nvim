@@ -1,8 +1,8 @@
 return {
   'akinsho/toggleterm.nvim',
-  version = "*",
+  version = '*',
   opts = {
-    direction = 'float',
-    vim.keymap.set('n', '<C-/>', ':ToggleTerm size=40<CR>'),
-  }
+    -- direction = 'bottom',
+    vim.keymap.set('n', '<C-/>', ':ToggleTerm size=10<CR>'),
+  },
 }
