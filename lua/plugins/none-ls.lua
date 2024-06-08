@@ -18,7 +18,7 @@ return {
         null_ls.builtins.diagnostics.pylint,
         -- JavaScript
         null_ls.builtins.formatting.prettierd,
-        require('none-ls.diagnostics.eslint_d'),
+        require 'none-ls.diagnostics.eslint_d',
         --go
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.goimports,
@@ -27,13 +27,13 @@ return {
     }
 
     -- Setup format on save
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      buffer = buffer,
-
-      callback = function()
-        vim.lsp.buf.format { async = false }
-      end,
-    })
+    -- vim.api.nvim_create_autocmd('BufWritePre', {
+    --   buffer = buffer,
+    --
+    --   callback = function()
+    --     vim.lsp.buf.format { async = false }
+    --   end,
+    -- })
 
     -- Format manually
     vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format file' })
