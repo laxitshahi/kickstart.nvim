@@ -5,15 +5,15 @@ return {
   --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- Mason is what installs LSPs
-    "williamboman/mason.nvim",
+    'williamboman/mason.nvim',
     config = function()
-      require("mason").setup()
-    end
+      require('mason').setup()
+    end,
   },
   {
     -- Bridges gap between mason and nvim-lspconfig
     -- It also allows us to use the ensure_installed function to easily install LSPs
-    "williamboman/mason-lspconfig.nvim",
+    'williamboman/mason-lspconfig.nvim',
     config = function()
       -- [[ Configure LSP ]]
       --  This function gets run when an LSP connects to a particular buffer.
@@ -59,7 +59,6 @@ return {
           vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
       end
-
 
       -- mason-lspconfig requires that these setup functions are called in this order
       -- before setting up the servers.
@@ -115,7 +114,7 @@ return {
           }
         end,
       }
-    end
+    end,
   },
 
   {
@@ -129,11 +128,18 @@ return {
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
+    config = function()
+      local lspconfig = require 'lspconfig'
 
+      lspconfig.rubocop.setup {
+        cmd = { 'bundle', 'exec', 'rubocop', '--lsp' },
+        root_dir = lspconfig.util.root_pattern('Gemfile', '.git', '.'),
+      }
+    end,
   },
 }
